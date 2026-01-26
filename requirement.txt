@@ -1,0 +1,8 @@
+streamlit
+pyodbc
+pandas
+python-dotenv
+pydantic
+langchain
+langchain-core
+langchain-google-genai
