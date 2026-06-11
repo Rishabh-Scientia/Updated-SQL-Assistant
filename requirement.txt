@@ -6,3 +6,8 @@ pydantic
 langchain
 langchain-core
 langchain-google-genai
+streamlit
+pyodbc
+pandas
+sqlalchemy
+openai
