@@ -88,6 +88,8 @@ def get_connection(server, database, username=None, password=None, auth_type="Wi
         return pyodbc.connect(conn_str)
     except Exception as e:
         st.error(f"Connection Error: {e}")
+        if server.lower() in ["localhost", "127.0.0.1"] or auth_type == "Windows":
+            st.warning("💡 **Connection Tip:** If this app is running on Streamlit Cloud, it cannot access databases hosted on your local machine (`localhost`) or use `Windows` Authentication. You must either run the app locally on your machine or connect to a cloud-hosted database using `SQL Server` Authentication (username & password).")
         return None
 
 def fetch_full_schema(server, db_name, user, pwd, auth):
